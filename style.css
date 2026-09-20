@@ -27,3 +27,12 @@ textarea,input{background:#f3eee7;border-color:#e3d9cd}textarea:focus,input:focu
 #writing-info p{font-size:15px;margin:0 0 12px}
 @media(max-width:650px){.celestial{width:120px}.light-art{width:100px}.sun-art{width:115px;margin-block:35px 45px}}
 @media print{.celestial{width:85px;break-inside:avoid}.light-art{width:75px}.sun-art{margin:15px auto}.transition{padding:20px 0}.morning-divider{padding-top:20px}#writing-info p{font-size:11pt}}
+
+/* Writing guidance is an inline, keyboard- and touch-accessible note. */
+#writing-info{position:relative}
+.inline-note-trigger{display:inline;padding:0;border:0;background:transparent;font:inherit;color:inherit;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px;cursor:pointer}
+#writing-tooltip{position:absolute;inset-inline-start:0;top:100%;z-index:10;display:block;width:min(100%,480px);padding:20px 22px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px #433c3210;color:var(--ink);font-size:14px;line-height:1.85;text-align:start}
+#writing-tooltip[hidden]{display:none}
+.dawn-art{width:140px}
+@media(max-width:650px){.dawn-art{width:125px}#writing-tooltip{width:100%;padding:17px;font-size:14px}}
+@media print{#writing-tooltip{display:none!important}.inline-note-trigger{text-decoration:none}.dawn-art{width:90px}}

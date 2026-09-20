@@ -24,3 +24,16 @@ fields.forEach(el=>{if(typeof answers[el.id]==='string')el.value=answers[el.id];
 const modal=document.querySelector('#clear-dialog');document.querySelector('#clear').onclick=()=>modal.showModal();document.querySelector('#cancel').onclick=()=>modal.close();document.querySelector('#confirm-clear').onclick=()=>{try{localStorage.removeItem(KEY);}catch{}answers={};fields.forEach(el=>el.value='');modal.close();document.querySelector('#status').textContent='הכתיבה נמחקה מהמכשיר הזה.';};
 let previous=[];function preparePrint(){previous=[...document.querySelectorAll('details')].map(el=>el.open);document.querySelectorAll('details').forEach(el=>el.open=true);fields.forEach(el=>{const copy=document.createElement('div');copy.className='print-answer';copy.textContent=el.value;el.after(copy);});}function finishPrint(){document.querySelectorAll('details').forEach((el,i)=>el.open=previous[i]||false);document.querySelectorAll('.print-answer').forEach(el=>el.remove());}
 window.addEventListener('beforeprint',preparePrint);window.addEventListener('afterprint',finishPrint);document.querySelectorAll('.print').forEach(b=>b.onclick=()=>window.print());
+
+const writingInfo=document.querySelector('#writing-info');
+const writingHelp=document.querySelector('#writing-help');
+const writingTooltip=document.querySelector('#writing-tooltip');
+let notePinned=false;
+function showWritingNote(show){writingTooltip.hidden=!show;writingHelp.setAttribute('aria-expanded',String(show));}
+writingInfo.addEventListener('pointerover',event=>{if(event.pointerType==='mouse'&&(event.target===writingHelp||writingTooltip.contains(event.target)))showWritingNote(true);});
+writingInfo.addEventListener('pointerleave',()=>{if(!notePinned&&document.activeElement!==writingHelp)showWritingNote(false);});
+writingHelp.addEventListener('focus',()=>showWritingNote(true));
+writingHelp.addEventListener('click',()=>{notePinned=!notePinned;showWritingNote(notePinned);});
+writingHelp.addEventListener('blur',()=>{notePinned=false;showWritingNote(false);});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){notePinned=false;showWritingNote(false);}});
+document.addEventListener('click',event=>{if(!writingInfo.contains(event.target)){notePinned=false;showWritingNote(false);}});
