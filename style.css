@@ -3,7 +3,7 @@
 
 /* Updated retreat copy and print attribution. */
 .topbar{justify-content:flex-end}.hero{padding-bottom:12px}.intro{border-top:1px solid var(--line);margin-top:30px}.summary-intro{text-align:center;margin-top:-20px;margin-bottom:35px}.night-icon{display:inline-flex;align-items:flex-start;gap:4px}.night-icon small{font-size:20px;line-height:1.3}
-@media print{@page{margin:16mm 14mm 20mm;@top-left{content:none}@top-center{content:none}@top-right{content:none}@bottom-left{content:none}@bottom-center{content:"© כל הזכויות שמורות לאנה מילנטייב";font:10pt Arial;color:#555}@bottom-right{content:none}}footer.wrap{display:block!important;border-top:1px solid #ccc;padding:12px 0;margin-top:20px;text-align:center}footer #clear,footer #status{display:none!important}.copyright{font-size:10pt}.summary-intro{margin-top:0}.intro{margin-top:10px}}
+@media print{@page{margin:16mm 14mm 20mm;@top-left{content:none}@top-center{content:none}@top-right{content:none}@bottom-left{content:none}@bottom-center{content:"© 2026 כל הזכויות שמורות לאנה מילנטייב · Dreams";font:10pt Arial;color:#555}@bottom-right{content:none}}footer.wrap{display:block!important;border-top:1px solid #ccc;padding:12px 0;margin-top:20px;text-align:center}footer #clear,footer #status{display:none!important}.copyright{font-size:10pt}.summary-intro{margin-top:0}.intro{margin-top:10px}}
 
 /* Unified Hebrew typography and warm retreat palette. */
 :root{--paper:#f7f3ed;--card:#fcfaf7;--ink:#433c32;--muted:#433c32;--olive:#786a58;--line:#e3d9cd;--soft:#efe8df;--sans:'Heebo','Arial',sans-serif;--serif:var(--sans)}
@@ -13,3 +13,17 @@ h1,h2,h3,h4,h5,.hero h1,.last-words,.closing h3{font-family:var(--sans);letter-s
 textarea,input{background:#f3eee7;border-color:#e3d9cd}textarea:focus,input:focus{border-color:#9e978a;box-shadow:0 0 0 3px #9e978a18}textarea::placeholder,input::placeholder{color:#837a6d}.gentle-note{background:none;border:0;border-radius:0;padding:15px 0 0;font-size:16px}.reminder-label{display:block;font-size:14px;margin-bottom:10px;color:#786a58}.transition{background:linear-gradient(180deg,transparent,#eee7de77,transparent)}.transition>span{color:#9e978a}.final{padding:55px 50px 15px}.final h2{margin-bottom:25px}.summary-intro{text-align:right;margin:0 0 24px;line-height:1.9}.final .writing{margin-top:20px}.text-button{color:var(--ink)}.card-number{font-family:var(--sans);color:#837a6d}.three-fields,.highlight{color:var(--ink)}
 @media(max-width:650px){.hero{padding-top:40px}.hero h1{font-size:2.7rem}.intro{padding:15px 5px 40px}.opening-quote{font-size:22px}.intro p{font-size:16px}.chapter-head h2{font-size:29px}.final{padding:40px 5px 10px}.subtitle{font-size:17px}}
 @media print{.hero{padding:10px 0}.hero h1{font-size:30pt}.intro{padding:10px 0 25px}.opening-quote{font-size:19pt}.final{padding:25px 0}.summary-intro{margin:0 0 15px}#storage-warning{display:none}}
+
+/* Celestial line illustrations. */
+.celestial{color:#8a7c69;margin:0 auto;text-align:center;width:140px}
+.celestial svg{display:block;width:100%;height:auto}
+.celestial figcaption{font-size:12px;letter-spacing:.22em;color:#786a58;margin-top:0}
+.transition{padding-top:64px;padding-bottom:8px;margin-bottom:30px}
+.transition h2{margin:24px 0 0}
+.morning-divider{padding-top:54px}
+.light-art{width:110px}
+.sun-art{margin:48px auto 65px;width:126px}
+.intro .sequence-note{margin-top:-10px}
+#writing-info p{font-size:15px;margin:0 0 12px}
+@media(max-width:650px){.celestial{width:120px}.light-art{width:100px}.sun-art{width:115px;margin-block:35px 45px}}
+@media print{.celestial{width:85px;break-inside:avoid}.light-art{width:75px}.sun-art{margin:15px auto}.transition{padding:20px 0}.morning-divider{padding-top:20px}#writing-info p{font-size:11pt}}
