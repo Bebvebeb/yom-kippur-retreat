@@ -37,3 +37,9 @@ writingHelp.addEventListener('click',()=>{notePinned=!notePinned;showWritingNote
 writingHelp.addEventListener('blur',()=>{notePinned=false;showWritingNote(false);});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){notePinned=false;showWritingNote(false);}});
 document.addEventListener('click',event=>{if(!writingInfo.contains(event.target)){notePinned=false;showWritingNote(false);}});
+
+// Chapter navigation also opens a closed chapter, including direct anchor links.
+function openLinkedChapter(){const chapter=document.getElementById(location.hash.slice(1));if(chapter?.matches('details.chapter-toggle'))chapter.open=true;}
+document.querySelectorAll('.topbar a[href="#evening"], .topbar a[href="#morning"]').forEach(link=>link.addEventListener('click',()=>{document.querySelector(link.getAttribute('href')).open=true;}));
+window.addEventListener('hashchange',openLinkedChapter);
+openLinkedChapter();
